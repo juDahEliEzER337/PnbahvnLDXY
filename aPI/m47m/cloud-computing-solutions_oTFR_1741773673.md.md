@@ -21,7 +21,6 @@ Create a file called index.html
 
 ```bash
 mkdir -p ~/ckad/
-vi ~/ckad/index.html
 ```
 
 Edit index.html with the following text.
