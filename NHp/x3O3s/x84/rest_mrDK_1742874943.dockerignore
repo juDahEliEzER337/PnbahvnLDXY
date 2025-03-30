@@ -25,7 +25,6 @@ node_modules
 
 **/__tests__
 **/*.test.*
-**/coverage
 
 *.md
 LICENSE
