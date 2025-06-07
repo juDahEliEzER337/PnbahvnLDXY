@@ -9,7 +9,6 @@ LICENSE
 .vscode
 obj/
 bin\ 
-obj\ 
 .vs\ 
 .git\ 
 docs\
