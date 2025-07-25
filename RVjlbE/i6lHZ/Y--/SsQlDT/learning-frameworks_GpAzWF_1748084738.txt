@@ -1,2 +1,45 @@
-Creative Commons Legal Code
-No need 
+由于您没有提供具体的代码片段，我无法针对特定的代码提出优化建议。不过，我可以提供一个简单的Python代码示例，实现一个登录流程，并检查用户是否为管理员的功能。请注意，这是一个非常基础的示例，实际应用中需要考虑安全性、错误处理和数据持久化等问题。
+
+```python
+# 用户登录和管理员检查示例
+
+# 假设我们有一个用户数据库，这里用字典模拟
+user_db = {
+    'admin': {'username': 'admin', 'password': 'admin123', 'is_admin': True},
+    'user1': {'username': 'user1', 'password': 'password123', 'is_admin': False}
+}
+
+def login(username, password):
+    """用户登录函数"""
+    user = user_db.get(username)
+    if user and user['password'] == password:
+        return True, user.get('is_admin', False)
+    else:
+        return False, None
+
+def check_admin(username):
+    """检查用户是否为管理员"""
+    user = user_db.get(username)
+    return user and user['is_admin']
+
+# 登录流程
+def main():
+    username = input("请输入用户名: ")
+    password = input("请输入密码: ")
+    
+    success, is_admin = login(username, password)
+    
+    if success:
+        print(f"欢迎回来，{username}!")
+        if is_admin:
+            print("您是管理员，拥有所有权限。")
+        else:
+            print("您是普通用户。")
+    else:
+        print("用户名或密码错误，请重试。")
+
+if __name__ == "__main__":
+    main()
+```
+
+这段代码提供了一个简单的用户登录和管理员检查流程。用户输入用户名和密码后，程序会检查这些信息是否与数据库中的记录匹配，并根据用户是否为管理员提供不同的反馈。这只是一个基础的示例，实际应用中需要使用更安全的方法来处理密码和用户认证。
